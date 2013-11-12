@@ -15,7 +15,7 @@
 ##		EET (High-Res Enhanced Echo Tops)
 ##
 setenv PATH .:${PATH}
-setenv RADAR_GINI ~gempak/scripts/gini
+setenv RADAR_GINI ~/scripts/gini
 set ISRUNNING=0
 foreach radar_id ( `ps -u $USER -o pid,args | grep rungini.csh | grep -v grep | awk '{ print $1 }'` )
 	set ISRUNNING=1
