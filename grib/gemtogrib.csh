@@ -1,6 +1,6 @@
 #!/bin/csh -f
 
-source /home/gempak/NAWIPS/Gemenviron
+source ~gempak/NAWIPS/Gemenviron
 
 cd $GEMDATA/radar
 echo In directory `pwd`

@@ -4,7 +4,7 @@
 ## A simple script, imports mosaic.nts and runs gdradr
 ##
 
-source ~gempak/Gemenviron
+source ~gempak/NAWIPS/Gemenviron
 
 limit coredumpsize unlimited
 
