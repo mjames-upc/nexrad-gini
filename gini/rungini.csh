@@ -4,7 +4,7 @@
 ##		DPA (High-Res Hourly Digital Precipitation Array)
 ##		DSP (High-Res Digital Storm Total Precipitation)
 ##		DVL (High-Res Digital Vertically Integrated Liquid)
-##		HHC (Hybrid Scan Hydrometeor Classification)
+##		DHC (Hybrid Scan Hydrometeor Classification)
 ##		EET (High-Res Enhanced Echo Tops)
 source ~gempak/Gemenviron
 setenv RADNTS ~gempak/scripts/radar_gini
@@ -44,8 +44,8 @@ GFUNC	= dvl
 SATFIL  = dvl_YYYYMMDD_HHNN
 r
 
-GFUNC	= hhc 
-SATFIL  = hhc_YYYYMMDD_HHNN
+GFUNC	= dhc 
+SATFIL  = dhc_YYYYMMDD_HHNN
 r
 
 e

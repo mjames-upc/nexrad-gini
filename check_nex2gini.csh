@@ -11,7 +11,7 @@
 ##		DPA (High-Res Hourly Digital Precipitation Array)
 ##		DSP (High-Res Digital Storm Total Precipitation)
 ##		DVL (High-Res Digital Vertically Integrated Liquid)
-##		HHC (Hybrid Scan Hydrometeor Classification)
+##		DHC (Hybrid Scan Hydrometeor Classification)
 ##		EET (High-Res Enhanced Echo Tops)
 ##
 setenv PATH .:${PATH}
