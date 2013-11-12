@@ -37,7 +37,7 @@ The relevant parts of impdnidh.f:
 
 After initialization, the 15 classification levels are split in the 0:255 range for HHC for every increase of 17 (15 times 17 = 255).
 
-Therefore, the nex2gini.tbl entry is 16 levels (including ND):
+Therefore, the nex2gini.tbl entry is:
 
 	!Prod	band ncal units,Calval_1;....;calval_n	Prod_header
 	! Since these are essentially spoofed satellite images,
@@ -54,7 +54,7 @@ Therefore, the nex2gini.tbl entry is 16 levels (including ND):
 	!		* 12-24 inches = 210-255
 	!
 	! national composites
-	HHC	  25    16 na,0,17,
+	HHC       25    1 na,0,255,0,150             TICZ99 CHIZ
 	EET	  26	1 KFt,0,255,0,85	     TICZ99 CHIZ
 	N0Q	  27	1 dBZ,0,255,-32,95	     TICZ99 CHIZ
 	DHR	  28	1 dBZ,0,255,-32,95	     TICZ99 CHIZ

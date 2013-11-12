@@ -14,7 +14,7 @@
 !		* 12-24 inches = 210-255
 !
 ! national composites
-!HHC	  25    16 na,
+HHC	  25    1 na,0,255,0,150             TICZ99 CHIZ
 EET	  26	1 KFt,0,255,0,85	     TICZ99 CHIZ
 N0Q	  27	1 dBZ,0,255,-32,95	     TICZ99 CHIZ
 DHR	  28	1 dBZ,0,255,-32,95	     TICZ99 CHIZ
