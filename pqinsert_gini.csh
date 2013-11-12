@@ -11,7 +11,7 @@ source /home/gempak/NAWIPS/Gemenviron
 # ##              DPA (High-Res Hourly Digital Precipitation Array)
 # ##              DSP (High-Res Digital Storm Total Precipitation)
 # ##              DVL (High-Res Digital Vertically Integrated Liquid)
-# ##              DHC (Digital Hydrometeor Classification)
+# ##              HHC (Digital Hydrometeor Classification)
 # ##              EET (High-Res Enhanced Echo Tops)
 # ##
 #
@@ -27,13 +27,13 @@ else
    set DPA=`find dpa_????????_???? ! -newer .pqinsert_stamp -print`
    set DSP=`find dsp_????????_???? ! -newer .pqinsert_stamp -print`
    set DVL=`find dvl_????????_???? ! -newer .pqinsert_stamp -print`
-   set DHC=`find dhc_????????_???? ! -newer .pqinsert_stamp -print`
+   set HHC=`find hhc_????????_???? ! -newer .pqinsert_stamp -print`
    set EET=`find eet_????????_???? ! -newer .pqinsert_stamp -print`
 endif
 
 touch .pqinsert_stamp
 
-if(($#DHR < 1)&&($#DPA < 1)&&($#DSP < 1)&&($#DVL < 1)&&($#DHC < 1)&&($#EET < 1)) then
+if(($#DHR < 1)&&($#DPA < 1)&&($#DSP < 1)&&($#DVL < 1)&&($#HHC < 1)&&($#EET < 1)) then
    echo nothing to insert
    exit
 endif
@@ -85,8 +85,8 @@ if($#DVL > 0) then
 endif
 
 
-if($#DHC > 0) then
-   foreach FILE ($DHC)
+if($#HHC > 0) then
+   foreach FILE ($HHC)
       pqinsert -f FNEXRAD -v -l - -p rad/NEXRCOMP/4km/$FILE $RAWDIR/$FILE
       if($status == 0) then
          rm $RAWDIR/$FILE

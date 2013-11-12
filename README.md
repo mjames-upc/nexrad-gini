@@ -12,7 +12,7 @@
 - DPA (High-Res Hourly Digital Precipitation Array)
 - DSP (High-Res Digital Storm Total Precipitation)
 - DVL (High-Res Digital Vertically Integrated Liquid)
-- DHC (Hybrid Scan Hydrometeor Classification)
+- HHC (Hybrid Scan Hydrometeor Classification)
 - EET (High-Res Enhanced Echo Tops)
 
 ### $GEMTBL/unidata/nex2gini.tbl entries
@@ -21,21 +21,21 @@ nex2gini will only run for these parameters if nex2gini.tbl is updated to the la
 
 The relevant parts of impdnidh.f:
 
-	        DATA            dhc  / 'ND', 'BI', 'GC', 'IC',
+	        DATA            hhc  / 'ND', 'BI', 'GC', 'IC',
      +                         'DS', 'WS', 'RA', 'HR',
      +                         'BD', 'GR', 'HA', '',
      +                         '', '', 'UK', 'RF' /
-
-	C* 177 - Hybrid Hydrometeor Classification
-           CASE (177)
-              dhci = 1
+	...
+	C* 165, 177 - Hydrometeor Classification
+           CASE (165, 177)
+              hhci = 1
               DO idl = 1, imndlv, 17
-                 cmblev ( idl ) = dhc ( dhci )
-                 dhci = dhci + 1
+                 cmblev ( idl ) = hhc ( hhci )
+                 hhci = hhci + 1
               END DO
               cmblev ( imndlv ) = 'RF'
 
-After initialization, the 15 classification levels are split in the 0:255 range for DHC for every increase of 17 (15 times 17 = 255).
+After initialization, the 15 classification levels are split in the 0:255 range for HHC for every increase of 17 (15 times 17 = 255).
 
 Therefore, the nex2gini.tbl entry is 16 levels (including ND):
 
@@ -54,7 +54,7 @@ Therefore, the nex2gini.tbl entry is 16 levels (including ND):
 	!		* 12-24 inches = 210-255
 	!
 	! national composites
-	DHC	  25    16 na,0,17,
+	HHC	  25    16 na,0,17,
 	EET	  26	1 KFt,0,255,0,85	     TICZ99 CHIZ
 	N0Q	  27	1 dBZ,0,255,-32,95	     TICZ99 CHIZ
 	DHR	  28	1 dBZ,0,255,-32,95	     TICZ99 CHIZ
