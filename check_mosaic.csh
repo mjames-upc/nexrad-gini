@@ -39,6 +39,6 @@ endif
 set DATE=`date -u`
 echo "restart radar mosaic" | /usr/bin/mailx -s "restart radar mosaic" mjames@unidata.ucar.edu
 
-## So now it needs to be started again... run ~gempak/scripts/grib/runmosaic.csh
+## So now it needs to be started again... run ~/scripts/grib/runmosaic.csh
 cd ~/scripts/grib
 runmosaic.csh >& /dev/null &
