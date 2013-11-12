@@ -15,37 +15,22 @@ if ( ! -e $GEMDATA/images/radar/NEXCOMP/1km/rad ) then
    echo $GEMDATA/images/radar/NEXCOMP/1km/rad does not exist
    exit
 endif
-cd $GEMDATA/images/radar/NEXCOMP/1km/rad
+#cd $GEMDATA/images/radar/NEXCOMP/1km/rad
 
 nex2gini << EOF
 GRDAREA = 23;-120;47.2634;-63.5664
 PROJ    = lcc/40;-100;40
 KXKY    = 4736;3000
 CPYFIL  = 
-GFUNC   = dhr 
+GFUNC   = ${1} 
 RADTIM  = current
 RADDUR  = 30
-RADFRQ  = 3
+RADFRQ  = 0 
 STNFIL  = 
 RADMODE = pc
-SATFIL  = dhr_YYYYMMDD_HHNN
+SATFIL  = $GEMDATA/images/radar/NEXCOMP/1km/rad/${1}_YYYYMMDD_HHNN
+SATFIL  = ${1}_YYYYMMDD_HHNN
 COMPRESS= yes
-r
-
-GFUNC   = dpa                                                                                                                             
-SATFIL  = dpa_YYYYMMDD_HHNN
-r
-
-GFUNC   = dsp 
-SATFIL  = dsp_YYYYMMDD_HHNN
-r
-
-GFUNC	= dvl
-SATFIL  = dvl_YYYYMMDD_HHNN
-r
-
-GFUNC	= hhc 
-SATFIL  = hhc_YYYYMMDD_HHNN
 r
 
 e
