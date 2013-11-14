@@ -6,8 +6,8 @@
 ##		DVL (High-Res Digital Vertically Integrated Liquid)
 ##		HHC (Hybrid Scan Hydrometeor Classification)
 ##		EET (High-Res Enhanced Echo Tops)
-source ~gempak/Gemenviron
-setenv RADNTS ~gempak/scripts/radar_gini
+#source ~/gempak/Gemenviron
+source /machine/gempak/GEMPAK6.10/Gemenviron
 if ( ! -e $GEMDATA/images/radar/NEXCOMP/1km/rad ) then
    mkdir -p $GEMDATA/images/radar/NEXCOMP/1km/rad
 endif
@@ -20,14 +20,15 @@ endif
 nex2gini << EOF
 GRDAREA = 23;-120;47.2634;-63.5664
 PROJ    = lcc/40;-100;40
-KXKY    = 4736;3000
+KXKY    = 4736;3000 
+KXKY    = 1184;750 
 CPYFIL  = 
 GFUNC   = ${1} 
 RADTIM  = current
 RADDUR  = 30
 RADFRQ  = 0 
 STNFIL  = 
-RADMODE = pc
+RADMODE = 
 SATFIL  = $GEMDATA/images/radar/NEXCOMP/1km/rad/${1}_YYYYMMDD_HHNN
 SATFIL  = ${1}_YYYYMMDD_HHNN
 COMPRESS= yes
