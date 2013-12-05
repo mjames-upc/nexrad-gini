@@ -16,7 +16,8 @@ PROJ    = sat
 SATFIL  = ${file}
 IMCBAR  = 1/////10
 LUTFIL  = default
-DEV     = gif|${1}-2.gif|2368;1500
+DEV     = gif|${1}-2.gif|1200;750
+\$mapfil = hicnus.nws
 r
 
 e

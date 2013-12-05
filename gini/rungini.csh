@@ -8,14 +8,14 @@
 ##		EET (High-Res Enhanced Echo Tops)
 #source ~/gempak/Gemenviron
 source /machine/gempak/GEMPAK6.10/Gemenviron
-if ( ! -e $GEMDATA/images/radar/NEXCOMP/1km/rad ) then
-   mkdir -p $GEMDATA/images/radar/NEXCOMP/1km/rad
+if ( ! -e $GEMDATA/nexrad/NEXCOMP/1km/rad ) then
+   mkdir -p $GEMDATA/nexrad/NEXCOMP/1km/rad
 endif
-if ( ! -e $GEMDATA/images/radar/NEXCOMP/1km/rad ) then
-   echo $GEMDATA/images/radar/NEXCOMP/1km/rad does not exist
+if ( ! -e $GEMDATA/nexrad/NEXCOMP/1km/rad ) then
+   echo $GEMDATA/nexrad/NEXCOMP/1km/rad does not exist
    exit
 endif
-#cd $GEMDATA/images/radar/NEXCOMP/1km/rad
+#cd $GEMDATA/nexrad/NEXCOMP/1km/rad
 
 nex2gini << EOF
 GRDAREA = 23;-120;47.2634;-63.5664
@@ -29,7 +29,7 @@ RADDUR  = 30
 RADFRQ  = 0 
 STNFIL  = 
 RADMODE = 
-SATFIL  = $GEMDATA/images/radar/NEXCOMP/1km/rad/${1}_YYYYMMDD_HHNN
+SATFIL  = $GEMDATA/nexrad/NEXCOMP/1km/rad/${1}_YYYYMMDD_HHNN
 SATFIL  = ${1}_YYYYMMDD_HHNN
 COMPRESS= yes
 r
